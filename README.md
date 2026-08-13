@@ -1,59 +1,147 @@
-# BrainboostV2
+# BrainBoost
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.3.
+Plataforma educativa en español que convierte matemáticas, ciencias y lectura en aventuras interactivas para estudiantes de primaria y secundaria.
 
-## Development server
+![Página principal de BrainBoost](public/assets/brainboost-hero.png)
 
-To start a local development server, run:
+## Características
+
+- Catálogo con búsqueda y filtros por materia.
+- Once juegos jugables con puntuación, progreso, rachas y recompensas.
+- Fichas individuales con objetivo educativo e instrucciones.
+- Planes de precios, información del equipo y formulario de contacto.
+- Diseño adaptable para escritorio, tableta y dispositivos móviles.
+- Navegación accesible mediante Angular Router.
+- Interfaz completamente en español.
+
+## Juegos disponibles
+
+| Materia | Juego | Mecánica principal |
+| --- | --- | --- |
+| Matemáticas | Misión Numérica | Mapa con puertas, vidas y operaciones matemáticas |
+| Matemáticas | Constructor Matemático | Obtención y administración de recursos para construir una ciudad |
+| Matemáticas | Carrera de Operaciones | Carrera contrarreloj impulsada por cálculo mental |
+| Matemáticas | Fracciones en Pizza | Preparación de pedidos con fracciones equivalentes |
+| Ciencias | Laboratorio BrainBoost | Experimentos mediante selección y combinación de materiales |
+| Ciencias | Exploradores del Universo | Misiones planetarias con combustible limitado |
+| Ciencias | Rescate del Ecosistema | Decisiones ambientales con recuperación visual del hábitat |
+| Ciencias | Viaje Celular | Identificación de organelos y sus funciones |
+| Lectura | Detective de Historias | Comprensión, inferencias y colección de pistas |
+| Lectura | Crea tu Aventura | Historia ramificada con decisiones y finales alternativos |
+| Lectura | Batalla de Palabras | Combate mediante vocabulario, ortografía y comprensión |
+
+Misión Numérica utiliza Phaser para su escenario interactivo. Los demás juegos emplean componentes y estado reactivo de Angular para ofrecer mecánicas específicas, accesibles y adaptables.
+
+## Rutas
+
+| Ruta | Descripción |
+| --- | --- |
+| `/` | Página principal |
+| `/games` | Catálogo, buscador y filtros |
+| `/games/:id` | Información de un juego |
+| `/games/:id/play` | Interfaz jugable |
+| `/pricing` | Planes y beneficios |
+| `/about` | Historia, misión, equipo y contacto |
+| `/login` | Prototipo de acceso |
+
+## Tecnologías
+
+- Angular 22
+- TypeScript 6
+- Angular Router y Forms
+- Phaser 3.90
+- SCSS
+- RxJS
+- Vitest
+- pnpm
+
+## Requisitos
+
+- Node.js `22.22.3` o superior compatible con Angular 22
+- pnpm `11` o superior
+
+## Instalación
 
 ```bash
-ng serve
+git clone <url-del-repositorio>
+cd brainboost-v2
+pnpm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Desarrollo local
 
 ```bash
-ng generate component component-name
+pnpm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La aplicación estará disponible en [http://localhost:4200](http://localhost:4200). Angular actualizará la página automáticamente cuando cambie el código.
+
+## Comandos
 
 ```bash
-ng generate --help
+# Servidor de desarrollo
+pnpm start
+
+# Compilación de producción
+pnpm build
+
+# Compilación continua
+pnpm watch
+
+# Pruebas interactivas
+pnpm test
+
+# Pruebas en una sola ejecución
+pnpm test --no-watch
 ```
 
-## Building
+Los archivos de producción se generan en `dist/brainboost-v2/browser`.
 
-To build the project run:
+## Estructura principal
 
-```bash
-ng build
+```text
+src/
+├── app/
+│   ├── core/
+│   │   └── game-data.ts          # Catálogo y metadatos de juegos
+│   ├── layout/
+│   │   ├── header.component.ts
+│   │   └── footer.component.ts
+│   ├── pages/
+│   │   ├── home.component.ts
+│   │   ├── games.component.ts
+│   │   ├── game-detail.component.ts
+│   │   ├── game-play.component.ts
+│   │   ├── pricing.component.ts
+│   │   ├── about.component.ts
+│   │   └── login.component.ts
+│   └── app.routes.ts
+└── styles.scss                   # Sistema visual y estilos adaptables
+
+public/
+├── assets/                       # Ilustraciones de BrainBoost
+└── vendor/                       # Distribución web de Phaser
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Añadir un juego
 
-## Running unit tests
+1. Agrega sus metadatos a `GAMES` en `src/app/core/game-data.ts`.
+2. Crea su banco de preguntas o su estado en `game-play.component.ts`.
+3. Añade la interfaz correspondiente dentro del bloque `@switch` del componente.
+4. Incorpora sus estilos en `src/styles.scss`.
+5. Actualiza `game-data.spec.ts` y ejecuta las pruebas.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Cada juego debe incluir un identificador único, materia, rango de edad, duración, objetivo educativo, recompensa e instrucciones de tres pasos.
 
-```bash
-ng test
-```
+## Validación
 
-## Running end-to-end tests
+El proyecto incluye pruebas para:
 
-For end-to-end (e2e) testing, run:
+- Creación y renderizado del shell principal.
+- Presencia de los nueve juegos educativos requeridos.
+- Conservación de los juegos originales que no se solapan.
+- Ausencia de identificadores duplicados en el catálogo.
 
-```bash
-ng e2e
-```
+## Estado del prototipo
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Los juegos funcionan completamente en el navegador. Los formularios de acceso, contacto y comentarios son demostrativos y todavía no están conectados a un servicio de autenticación o backend persistente.
