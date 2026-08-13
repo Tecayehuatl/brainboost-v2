@@ -7,7 +7,7 @@ import { GameCategory, GAMES } from '../core/game-data';
   selector: 'app-games',
   imports: [FormsModule, RouterLink],
   template: `
-    <section class="games-hero"><div class="container games-hero-grid"><div><span class="eyebrow light">La aventura de la semana</span><h1>Misión<br><em>Multiplica</em></h1><p>Salta entre planetas, resuelve retos y devuelve las estrellas a la galaxia.</p><div class="game-meta"><span>⌁ 8–12 años</span><span>★ 4.9</span><span>12.4k jugadores</span></div><a class="button button-primary" routerLink="/games/mision-multiplica/play">Jugar ahora <span>▶</span></a></div><div class="space-illustration"><div class="space-card"><span class="space-rocket">🚀</span><span class="space-planet one">🪐</span><span class="space-star a">✦</span><span class="space-star b">✦</span><strong>7 × 8 = ?</strong></div></div></div></section>
+    <section class="games-hero"><div class="container games-hero-grid"><div><span class="eyebrow light">La aventura de la semana</span><h1>Misión<br><em>Numérica</em></h1><p>Cruza puentes, abre puertas y vence guardianes dominando todo tipo de operaciones.</p><div class="game-meta"><span>⌁ 8–12 años</span><span>★ 4.9</span><span>12.4k jugadores</span></div><a class="button button-primary" routerLink="/games/mision-numerica/play">Jugar ahora <span>▶</span></a></div><div class="space-illustration"><div class="space-card"><span class="space-rocket">🗺️</span><span class="space-planet one">🏝️</span><span class="space-star a">✦</span><span class="space-star b">✦</span><strong>48 ÷ 6 = ?</strong></div></div></div></section>
     <section class="games-library section"><div class="container">
       <div class="library-heading"><div><span class="eyebrow">Elige tu reto</span><h2>Todos los <em>juegos</em></h2></div><label class="search-box"><span>⌕</span><input type="search" [(ngModel)]="searchTerm" placeholder="Buscar un juego..." aria-label="Buscar juegos"></label></div>
       <div class="filters" role="group" aria-label="Filtrar por categoría">
@@ -41,4 +41,3 @@ export class GamesComponent {
     );
   }
 }
-

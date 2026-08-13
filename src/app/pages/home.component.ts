@@ -21,9 +21,9 @@ import { GAMES } from '../core/game-data';
       <div class="container">
         <div class="section-heading split"><div><span class="eyebrow">Explora y aprende</span><h2>Un mundo de <em>descubrimientos</em></h2></div><p>Retos diseñados por educadores para que cada logro se sienta como una aventura.</p></div>
         <div class="topic-grid">
-          <a class="topic-card topic-math" routerLink="/games" [queryParams]="{ category: 'Matemáticas' }"><div class="topic-icon">∑</div><span>01</span><h3>Matemáticas</h3><p>Resuelve, conecta y domina números a tu ritmo.</p><strong>Explorar 12 juegos →</strong><div class="topic-doodle">× ÷ +</div></a>
-          <a class="topic-card topic-science" routerLink="/games" [queryParams]="{ category: 'Ciencias' }"><div class="topic-icon">⚗</div><span>02</span><h3>Ciencias</h3><p>Experimenta con el mundo y descubre cómo funciona.</p><strong>Explorar 9 juegos →</strong><div class="topic-doodle">✦ ◌ ⚛</div></a>
-          <a class="topic-card topic-reading" routerLink="/games" [queryParams]="{ category: 'Lectura' }"><div class="topic-icon">Aa</div><span>03</span><h3>Lectura</h3><p>Lee historias, encuentra pistas y crea nuevos finales.</p><strong>Explorar 10 juegos →</strong><div class="topic-doodle">“ ”</div></a>
+          <a class="topic-card topic-math" routerLink="/games" [queryParams]="{ category: 'Matemáticas' }"><div class="topic-icon">∑</div><span>01</span><h3>Matemáticas</h3><p>Resuelve, conecta y domina números a tu ritmo.</p><strong>Explorar 4 juegos →</strong><div class="topic-doodle">× ÷ +</div></a>
+          <a class="topic-card topic-science" routerLink="/games" [queryParams]="{ category: 'Ciencias' }"><div class="topic-icon">⚗</div><span>02</span><h3>Ciencias</h3><p>Experimenta con el mundo y descubre cómo funciona.</p><strong>Explorar 4 juegos →</strong><div class="topic-doodle">✦ ◌ ⚛</div></a>
+          <a class="topic-card topic-reading" routerLink="/games" [queryParams]="{ category: 'Lectura' }"><div class="topic-icon">Aa</div><span>03</span><h3>Lectura</h3><p>Lee historias, encuentra pistas y crea nuevos finales.</p><strong>Explorar 3 juegos →</strong><div class="topic-doodle">“ ”</div></a>
         </div>
       </div>
     </section>
@@ -31,7 +31,7 @@ import { GAMES } from '../core/game-data';
     <section class="featured-band section">
       <div class="container featured-layout">
         <div class="featured-visual"><span class="planet">🪐</span><span class="rocket">🚀</span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><div class="badge-popular">Más jugado<br><strong>esta semana</strong></div></div>
-        <div class="featured-copy"><span class="eyebrow light">Juego destacado</span><h2>Misión<br><em>Multiplica</em></h2><p>La galaxia perdió sus estrellas. Resuelve operaciones, abre portales y devuelve la luz a cada planeta.</p><div class="game-meta"><span>⌁ 8–12 años</span><span>◷ 10 min</span><span>★ 4.9</span></div><a class="button button-white" [routerLink]="['/games', featured.id]">Ver aventura <span>→</span></a></div>
+        <div class="featured-copy"><span class="eyebrow light">Juego destacado</span><h2>Misión<br><em>Numérica</em></h2><p>Avanza por islas, abre puentes y supera guardianes resolviendo operaciones a toda velocidad.</p><div class="game-meta"><span>⌁ 8–12 años</span><span>◷ 10 min</span><span>★ 4.9</span></div><a class="button button-white" [routerLink]="['/games', featured.id]">Ver aventura <span>→</span></a></div>
       </div>
     </section>
 
@@ -52,4 +52,3 @@ import { GAMES } from '../core/game-data';
 export class HomeComponent {
   readonly featured = GAMES[0];
 }
-
