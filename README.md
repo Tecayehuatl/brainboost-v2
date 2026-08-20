@@ -97,6 +97,16 @@ pnpm test --no-watch
 
 Los archivos de producción se generan en `dist/brainboost-v2/browser`.
 
+## Despliegue en Vercel
+
+El repositorio incluye `vercel.json` con el comando de compilación, el directorio de salida y la redirección necesaria para que Angular Router funcione al abrir rutas directamente.
+
+1. Importa el repositorio en Vercel.
+2. Conserva el framework detectado como **Angular**.
+3. Despliega el proyecto; no se requieren variables de entorno para el prototipo actual.
+
+También puedes desplegarlo desde la terminal con `vercel` o generar una vista previa con `vercel deploy`.
+
 ## Estructura principal
 
 ```text
