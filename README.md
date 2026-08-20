@@ -57,7 +57,7 @@ Misión Numérica utiliza Phaser para su escenario interactivo. Los demás juego
 
 ## Requisitos
 
-- Node.js `22.22.3` o superior compatible con Angular 22
+- Node.js `24.15.0` o una versión posterior de Node.js 24
 - pnpm `11` o superior
 
 ## Instalación
