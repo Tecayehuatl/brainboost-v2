@@ -6,6 +6,7 @@ import { GamesComponent } from './pages/games.component';
 import { HomeComponent } from './pages/home.component';
 import { LoginComponent } from './pages/login.component';
 import { PricingComponent } from './pages/pricing.component';
+import { SignupComponent } from './pages/signup.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'BrainBoost · Aprende jugando' },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'pricing', component: PricingComponent, title: 'Precios · BrainBoost' },
   { path: 'about', component: AboutComponent, title: 'Nosotros · BrainBoost' },
   { path: 'login', component: LoginComponent, title: 'Acceder · BrainBoost' },
+  { path: 'signup', component: SignupComponent, title: 'Crear cuenta · BrainBoost' },
   { path: '**', redirectTo: '' },
 ];

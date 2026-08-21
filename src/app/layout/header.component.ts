@@ -8,8 +8,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" routerLink="/" aria-label="BrainBoost, inicio" (click)="menuOpen.set(false)">
-          <span class="brand-mark"><span>✦</span></span>
-          <span>Brain<span>Boost</span></span>
+          <img class="brand-wordmark" src="/assets/brainboost-wordmark.png" alt="" aria-hidden="true">
+          <span class="visually-hidden" aria-hidden="true">BrainBoost</span>
         </a>
         <button class="nav-toggle" type="button" [class.open]="menuOpen()" (click)="menuOpen.set(!menuOpen())" aria-label="Abrir menú" [attr.aria-expanded]="menuOpen()">☰</button>
         <nav [class.open]="menuOpen()" aria-label="Navegación principal">
@@ -26,4 +26,3 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent {
   readonly menuOpen = signal(false);
 }
-
